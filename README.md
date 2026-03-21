@@ -1,12 +1,13 @@
-The Meme Factory 
-##Project Concept
+## The Meme Factory 
+## Project Concept
 
 A web application called The Meme Factory allows users to peruse and search well-known meme templates. This project's objective is to use a public API to build an easy-to-use, interactive platform.
 
 ## Used API
 
 * Imgflip API: https://imgflip.com/api/get_memes This API offers meme names, images, and additional information.
---- ## Scheduled Features
+--- 
+## Scheduled Features
 
 * Look up memes by name* Use a responsive grid layout to display memes.
 * Distribute links to memes (copy to clipboard)* Alphabetical sorting option
@@ -26,10 +27,7 @@ This project's primary goal is to practise:
 * Concepts from JavaScript
 * UI responsiveness and design
 
----
+--- 
+## Developer
 
-## 📁 Structure ```id="k7l2mn" meme-factory/ index.html style.css script.js README.md```
-
---- ## Developer
-
-*Yash Panpaliya
+* Yash Panpaliya
