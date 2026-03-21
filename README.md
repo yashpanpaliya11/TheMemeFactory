@@ -5,7 +5,7 @@ A web application called The Meme Factory allows users to peruse and search well
 
 ## Used API
 
-* Imgflip API: https://imgflip.com/api/get_memes This API offers meme names, images, and additional information.
+* Imgflip API: [https://imgflip.com/api/get_memes](https://api.imgflip.com/get_memes) This API offers meme names, images, and additional information.
 --- 
 ## Scheduled Features
 
