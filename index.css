@@ -1,5 +1,24 @@
-/* Text */
-.card p {
-  margin-bottom: 10px;
-  font-weight: bold;
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+#memeCard {
+  margin: 20px auto;
+  width: 30px;
+}
+
+#memeImage {
+  width: 90%;
+  height: 100px;
+  object-fit: cover; 
+}
+
+#memeTitle {
+  margin-top: 10px;
+}
+
+#refreshBtn {
+  padding: 10px 15px;
+  cursor: pointer;
 }
