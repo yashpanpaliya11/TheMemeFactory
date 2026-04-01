@@ -1,12 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meme Factory</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Factory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Meme Factory</h1>
+
+    <div class="card" id="memeCard" style="display:none;">
+      <p id="memeTitle"></p>
+      <img id="memeImage" src="" alt="">
+    </div>
+
+    <button id="refreshBtn">Refresh Meme</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
