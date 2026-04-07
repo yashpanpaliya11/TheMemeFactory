@@ -1,29 +1,35 @@
+
 let memes = [];
+const memeImage = document.getElementById("memeImage");
+const memeTitle = document.getElementById("memeTitle");
+
 
 async function getMemes() {
-  try {
-    const res = await fetch("https://api.imgflip.com/get_memes");
-    const json = await res.json();
-    return json.data.memes;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
+    try {
+        const response = await fetch("https://api.imgflip.com/get_memes");
+        const json = await response.json();
+        return json.data.memes;
+    } catch (error) {
+        console.error("Error fetching memes:", error);
+    }
 }
 
 function showRandomMeme() {
-  const randomIndex = Math.floor(Math.random() * memes.length);
-  const meme = memes[randomIndex];
+    if (memes.length === 0) return;
 
-  document.getElementById("memeTitle").textContent = meme.name;
-  document.getElementById("memeImage").src = meme.url;
+
+    const randomIndex = Math.floor(Math.random() * memes.length);
+    const meme = memes[randomIndex];
+
+
+    memeTitle.textContent = meme.name;
+    memeImage.src = meme.url;
 }
 
-window.onload = async function () {
-  memes = await getMemes();
-  showRandomMeme();
+window.onload = async () => {
+    memes = await getMemes();
+    showRandomMeme();
 };
+const refreshBtn = document.getElementById("refreshBtn");
 
-document
-  .getElementById("refreshBtn")
-  .addEventListener("click", showRandomMeme);
+rebu.addEventListener("click", showRandomMeme);

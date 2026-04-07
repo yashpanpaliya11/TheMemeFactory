@@ -1,24 +1,58 @@
 body {
-  text-align: center;
-  font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px black;
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #memeCard {
-  margin: 20px auto;
-  width: 30px;
-}
-
-#memeImage {
-  width: 90%;
-  height: 100px;
-  object-fit: cover; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px black;
 }
 
 #memeTitle {
-  margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
 }
 
-#refreshBtn {
-  padding: 10px 15px;
-  cursor: pointer;
+#memeImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+#rebu {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rebu:hover {
+    background-color: #0056b3;
 }
