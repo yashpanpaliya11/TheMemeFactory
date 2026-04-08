@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Generator</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <title>Meme Browser</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div id="container">
-        <h1>Meme Generator</h1>
-        <div id="memeCard">
-            <h3 id="memeTitle">Meme Title</h3>
-            <img id="memeImage" src="" alt="Meme">
-        </div>
-        <button id="rebu">New Meme</button>
-    </div>
 
-    <script src="script.js"></script>
+  <h1>Meme Browser</h1>
+
+  <input type="text" id="searchInput" placeholder="Search memes here..." />
+
+
+  <div id="categories">
+    <button data-cat="all">All</button>
+    <button data-cat="classic">Classic</button>
+    <button data-cat="funny">Funny</button>
+  </div>
+
+  <div id="memeGrid"></div>
+  <button id="topBtn">⬆ Top</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
