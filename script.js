@@ -4,7 +4,17 @@ let filteredMemes = [];
 const grid = document.getElementById("memeGrid");
 const searchInput = document.getElementById("searchInput");
 const topBtn = document.getElementById("topBtn");
+const toggleBtn = document.getElementById("themeToggle");
 
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    toggleBtn.textContent = "Light Mode";
+  } else {
+    toggleBtn.textContent = "Dark Mode";
+  }
+});
 
 async function getMemes() {
   try {
