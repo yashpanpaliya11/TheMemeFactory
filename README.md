@@ -1,33 +1,46 @@
-## The Meme Factory 
-## Project Concept
+# 🧱 The Meme Factory
 
-A web application called The Meme Factory allows users to peruse and search well-known meme templates. This project's objective is to use a public API to build an easy-to-use, interactive platform.
+A simple meme browser built with vanilla HTML, CSS, and JavaScript. It pulls meme templates from the Imgflip API and lets you search, filter, and share them.
 
-## Used API
-
-* Imgflip API: [https://imgflip.com/api/get_memes](https://api.imgflip.com/get_memes) This API offers meme names, images, and additional information.
---- 
-## Scheduled Features
-
-* Look up memes by name* Use a responsive grid layout to display memes.
-* Distribute links to memes (copy to clipboard)* Alphabetical sorting option
-* The button to return to the top
-
-### Technologies
-
-* HTML
-* CSS
-* JavaScript (Fetch API)
 ---
 
-## Project Objective
+## What it does
 
-This project's primary goal is to practise:
-* Integration of APIs
-* Concepts from JavaScript
-* UI responsiveness and design
+- Browse 100+ popular meme templates in a responsive grid
+- Search memes by name in real time
+- Filter by category — All, Classic, or Funny
+- Copy a meme's image link to clipboard with one click
+- Switch between light and dark mode
 
---- 
+---
+
+## API
+
+Uses the free [Imgflip API](https://api.imgflip.com/get_memes) — no auth needed, just a GET request that returns a list of meme templates with names and image URLs.
+
+---
+
+## Tech stack
+
+- HTML
+- CSS
+- JavaScript — Fetch API for data, DOM manipulation
+
+---
+
+## Features I added
+
+- Alphabetical / popularity sort
+- More category filters
+-Share Button and Copy link option
+
 ## Developer
 
-* Yash Panpaliya
+Yash Panpaliya
+
+---
+
+## Deployment Link
+https://memefactoryyash.netlify.app/
+
+
