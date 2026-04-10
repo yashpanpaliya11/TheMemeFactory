@@ -1,174 +1,279 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* page fade-in on load */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* title bounce entrance */
+@keyframes titleBounce {
+    0%   { opacity: 0; transform: translateY(-40px) scale(0.8); }
+    60%  { opacity: 1; transform: translateY(8px) scale(1.05); }
+    80%  { transform: translateY(-4px) scale(0.98); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* title shimmer/glow loop */
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 2px 2px 0px rgba(0,0,0,0.15); letter-spacing: 1px; }
+    50%       { text-shadow: 0 0 20px rgba(119,0,255,0.3), 2px 2px 0px rgba(0,0,0,0.1); letter-spacing: 3px; }
+}
+
+/* card pop-in */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* share button pulse */
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(119, 0, 255, 0.5); }
+    70%  { box-shadow: 0 0 0 8px rgba(119, 0, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(119, 0, 255, 0); }
+}
 
 body {
     min-height: 100vh;
-    padding: 20px;
+    padding: 30px 20px;
     background-color: #CCFF00;
-    background-size: 400% 400%;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: sans-serif;
 }
 
 h1 {
     font-family: 'Pacifico', cursive;
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 32px;
-    color: black;
-    font-weight: bold;
+    margin-bottom: 24px;
+    font-size: 36px;
+    color: #111;
     letter-spacing: 1px;
+    animation: titleBounce 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+               titleGlow 3s ease-in-out 0.7s infinite;
+    cursor: default;
+}
+
+h1:hover {
+    animation: titleBounce 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#themeToggle {
+    display: block;
+    margin: 0 auto 16px;
+    padding: 8px 20px;
+    border: 2px solid #111;
+    background: transparent;
+    color: #111;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    animation: fadeInDown 0.6s ease 0.1s both;
+}
+
+#themeToggle:active {
+    transform: scale(0.95);
+}
+
+#themeToggle:hover {
+    background: #111;
+    color: #CCFF00;
 }
 
 #searchInput {
     display: block;
     margin: 0 auto 20px;
-    padding: 14px 20px;
+    padding: 12px 20px;
     width: 90%;
     max-width: 500px;
-    color: #000000;
-    border-radius: 30px;
-    border: none;
+    border-radius: 25px;
+    border: 2px solid #111;
     outline: none;
-    background: rgba(7, 7, 7, 0.9);
-    font-size: 16px;
-    box-shadow: 0 4px 15px rgba(39, 39, 39, 0.2);
-    transition: all 0.3s ease;
+    background: #fff;
+    color: #111;
+    font-size: 15px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInDown 0.6s ease 0.2s both;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 0 4px rgba(119, 0, 255, 0.15);
 }
 
 #searchInput::placeholder {
-    color: #fffafa;
-    font-size: 15px;
+    color: #888;
 }
 
 #searchInput:focus {
-    animation: inputFocus 0.4s ease forwards;
-}
-
-@keyframes inputFocus {
-    from {
-        background: rgba(255, 255, 255, 0.2);
-        transform: scale(1);
-    }
-
-    to {
-        background: rgba(52, 51, 51, 0.5);
-        transform: scale(1.5);
-    }
-}
-
-#searchInput:focus {
-    background: rgba(52, 51, 51, 0.3);
-
+    border-color: #7700ff;
 }
 
 #categories {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    animation: fadeInDown 0.6s ease 0.3s both;
 }
 
 #categories button {
-    margin: 5px;
-    padding: 8px 16px;
-    border: none;
-    background: rgba(97, 95, 95, 0.2);
-    color: black;
+    margin: 4px;
+    padding: 7px 18px;
+    border: 2px solid #111;
+    background: transparent;
+    color: #111;
     border-radius: 20px;
     cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
+    font-size: 13px;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
 }
 
+#categories button:hover {
+    background: #111;
+    color: #CCFF00;
+    transform: scale(1.07);
+}
+
+#categories button:active {
+    transform: scale(0.95);
+}
 
 #memeGrid {
     column-count: 3;
-    column-gap: 15px;
+    column-gap: 16px;
 }
 
 .memeCard {
     break-inside: avoid;
-    background: rgba(255, 255, 255, 0.15);
-    margin-bottom: 15px;
+    background: #fff;
+    margin-bottom: 16px;
     padding: 10px;
-    border-radius: 15px;
-    backdrop-filter: blur(30px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    transition: 0.4s;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popIn 0.4s ease both;
 }
 
 .memeCard:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .memeCard img {
-    width: 90%;
-    border-radius: 12px;
+    width: 100%;
+    border-radius: 8px;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.memeCard:hover img {
+    transform: scale(1.02);
 }
 
 .memeCard p {
     margin: 8px 0;
-    font-size: 14px;
-    color: rgb(0, 0, 0);
+    font-size: 13px;
+    color: #333;
+    text-align: center;
 }
 
 .shareBtn {
     width: 100%;
     padding: 8px;
     border: none;
-    background: rgb(255, 97, 255);
+    background: #7700ff;
     color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 13px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .shareBtn:hover {
-    transform: scale(1.04);
+    background: #5500cc;
+    animation: pulse 0.6s ease;
+}
+
+.shareBtn:active {
+    transform: scale(0.96);
 }
 
 .dark {
-  background: #0f172a;
-  color: #e2e8f0;
+    background: #111;
+    color: #f0f0f0;
 }
 
 .dark h1 {
-  color: #CCFF00;
+    color: #CCFF00;
+    animation: titleBounce 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+               titleGlowDark 3s ease-in-out 0.7s infinite;
 }
+
+@keyframes titleGlowDark {
+    0%, 100% { text-shadow: 2px 2px 0px rgba(0,0,0,0.4); letter-spacing: 1px; }
+    50%       { text-shadow: 0 0 24px rgba(204,255,0,0.5), 2px 2px 0px rgba(0,0,0,0.2); letter-spacing: 3px; }
+}
+
+.dark #themeToggle {
+    border-color: #CCFF00;
+    color: #CCFF00;
+}
+
+.dark #themeToggle:hover {
+    background: #CCFF00;
+    color: #111;
+}
+
 .dark #searchInput {
-  background: rgba(0,0,0,0.5);
-  color: white;
+    background: #222;
+    color: #f0f0f0;
+    border-color: #444;
 }
 
 .dark #searchInput::placeholder {
-  color: #aaa;
+    color: #888;
 }
 
-.dark .memeCard {
-  background: rgba(255,255,255,0.05);
+.dark #searchInput:focus {
+    border-color: #CCFF00;
 }
 
 .dark #categories button {
-  background: rgba(255,255,255,0.1);
-  color: white;
+    border-color: #555;
+    color: #ccc;
 }
 
 .dark #categories button:hover {
-  background: #CCFF00;
-  color: black;
+    background: #CCFF00;
+    border-color: #CCFF00;
+    color: #111;
+}
+
+.dark .memeCard {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+.dark .memeCard p {
+    color: #ccc;
 }
 
 .dark .shareBtn {
-  background: #CCFF00;
-  color: black;
+    background: #CCFF00;
+    color: #111;
+}
+
+.dark .shareBtn:hover {
+    background: #aadd00;
 }
 
 @media (max-width: 900px) {
-    #memeGrid {
-        column-count: 2;
-    }
+    #memeGrid { column-count: 2; }
 }
 
 @media (max-width: 500px) {
-    #memeGrid {
-        column-count: 1;
-    }
+    #memeGrid { column-count: 1; }
+    h1 { font-size: 28px; }
 }
