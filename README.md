@@ -6,7 +6,7 @@ A simple meme browser built with vanilla HTML, CSS, and JavaScript. It pulls mem
 
 ## What it does
 
-- Browse 100+ popular meme templates in a responsive grid
+- Browse 100+ popular meme templates in a responsive style
 - Search memes by name in real time
 - Filter by category — All, Classic, or Funny
 - Copy a meme's image link to clipboard with one click
